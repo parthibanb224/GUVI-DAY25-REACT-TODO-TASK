@@ -6,14 +6,14 @@ import {v4 as uuidv4} from 'uuid';
 
 function App() {
 
-  const getLocalItems= () => {
-    let list = localStorage.getItem('lists');
-    // console.log(list);
-    if(list){
-      return JSON.parse(localStorage.getItem('lists'));
-    }
-  }
-    const [todo,setTodo] = useState(getLocalItems());
+  // const getLocalItems= () => {
+  //   let list = localStorage.getItem('lists');
+  //   // console.log(list);
+  //   if(list){
+  //     return JSON.parse(localStorage.getItem('lists'));
+  //   }
+  // }
+    const [todo,setTodo] = useState([]);
     const [todoCopy,setTodoCopy] = useState([]);
     const [allValues,setAllValues] = useState({todoName : "",todoDescription : ""});
 
@@ -31,9 +31,9 @@ function App() {
       })
     }
 
-    useEffect(() => {
-      localStorage.setItem('lists',JSON.stringify(todo))
-    }, [todo]);
+    // useEffect(() => {
+    //   localStorage.setItem('lists',JSON.stringify(todo))
+    // }, [todo]);
 
   return (
     <div>
